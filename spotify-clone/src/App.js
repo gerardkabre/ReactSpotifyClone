@@ -18,10 +18,10 @@ class App extends Component {
           <Grid fluid style={{padding: 0}}>
             <div style={{ height: '90vh' }}>
               <Row className="show-grid" style={{ height: '100%' }}>
-                <Col xs={2} md={2} style={{ height: '100%' }}>
+                <Col xs={2} md={2} style={{ height: '100%', padding:0 }}>
                   <NavBar />
                 </Col>
-                <Col xs={10} md={10}>
+                <Col xs={10} md={10} className="content" >
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/AboutPage" component={AboutPage} />
                 </Col>

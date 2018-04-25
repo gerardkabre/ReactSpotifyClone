@@ -23,6 +23,59 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  height: 100%;
+  background-color: black;
+  background: -moz-linear-gradient(
+    top,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 12%,
+    rgba(71, 71, 71, 1) 39%,
+    rgba(19, 19, 19, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(76, 76, 76, 1)),
+    color-stop(12%, rgba(89, 89, 89, 1)),
+    color-stop(39%, rgba(71, 71, 71, 1)),
+    color-stop(100%, rgba(19, 19, 19, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 12%,
+    rgba(71, 71, 71, 1) 39%,
+    rgba(19, 19, 19, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 12%,
+    rgba(71, 71, 71, 1) 39%,
+    rgba(19, 19, 19, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 12%,
+    rgba(71, 71, 71, 1) 39%,
+    rgba(19, 19, 19, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(76, 76, 76, 1) 0%,
+    rgba(89, 89, 89, 1) 12%,
+    rgba(71, 71, 71, 1) 39%,
+    rgba(19, 19, 19, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
 }
