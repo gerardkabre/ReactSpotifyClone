@@ -1,10 +1,11 @@
-import React  from 'react';
+import React from 'react';
+import Container from '../components/Container/Container';
+import TitleSubtitle from '../components/Title&Subtitle/TitleSubtitle';
 
 const HomePage = () => (
-  <div>
-    <h1>HomePage</h1>
-    <p> hey bitchuieeeees</p>
-  </div>
+  <Container>
+    <TitleSubtitle title="The jazzy Page" subtitle="Discover new Jazz artists, bands and playlists" />
+  </Container>
 );
 
 export default HomePage;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import NavBar from './components/NavBar/NavBar.js';
 import Footer from './components/Footer/Footer.js';
 
@@ -9,6 +9,7 @@ import './App.css';
 
 import AboutPage from './Pages/AboutPage';
 import HomePage from './Pages/HomePage';
+import PlaylistsPage from './Pages/PlaylistsPage.js';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
                 <Col xs={10} md={10} className="content" >
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/AboutPage" component={AboutPage} />
+                  <Route exact path="/PlaylistsPage" component={PlaylistsPage} />
                 </Col>
               </Row>
             </div>
