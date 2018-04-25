@@ -1,0 +1,20 @@
+.navBar {
+  background-color: black;
+  list-style: none;
+  height: 100%;
+  padding: 20px 20px 20px 20px;
+  text-align: left;
+}
+
+.navBar > li > a {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(214, 212, 212);
+  font-weight: 500;
+}
+
+.navBar > li > a:hover {
+  color: rgb(245, 241, 241);
+  text-decoration: none;
+}
+

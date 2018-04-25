@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
+import './Footer.css';
 
-const Footer = () => <div style={{ width: '100%', backgroundColor:'black'}}>PLAY BUTTON</div>;
+const Footer = () => <div className="footer">PLAY BUTTON</div>;
 
 export default Footer;
