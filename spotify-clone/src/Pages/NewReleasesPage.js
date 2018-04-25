@@ -3,10 +3,10 @@ import React from 'react';
 import Container from '../components/Container/Container';
 import TitleSubtitle from '../components/Title&Subtitle/TitleSubtitle';
 
-const HomePage = () => (
+const NewReleasesPage = () => (
   <Container>
-    <TitleSubtitle title="The jazzy Page" subtitle="Discover new Jazz artists, bands and playlists" />
+    <TitleSubtitle title="New Releases" subtitle="Last releases form the jazz comunity" />
   </Container>
 );
 
-export default HomePage;
+export default NewReleasesPage;

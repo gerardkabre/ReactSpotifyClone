@@ -8,7 +8,7 @@ import './NavBar.css';
 const NavBar = ({ location }) => (
   <Nav bsStyle="pills" stacked bsClass={'navBar'}>
     <NavItem componentClass={Link} href="/" to="/" /* active={location.pathname === '/'} */>
-      Home Page
+      Home 
     </NavItem>
     <NavItem
       componentClass={Link}
@@ -18,6 +18,15 @@ const NavBar = ({ location }) => (
     >
       Playlists
     </NavItem>
+    <NavItem
+      componentClass={Link}
+      bsClass={'navBar__item'}
+      href="/NewReleasesPage"
+      to="/NewReleasesPage" /* active={location.pathname === '/economies'} */
+    >
+      New releases
+    </NavItem>
+
     <NavItem
       componentClass={Link}
       bsClass={'navBar__item'}

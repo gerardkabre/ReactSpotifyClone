@@ -2,7 +2,7 @@
 
 .content {
   height: 100%;
-  background-color: black;
+  padding: 0;
   background: -moz-linear-gradient(
     top,
     rgba(76, 76, 76, 1) 0%,
