@@ -30,7 +30,7 @@ export function getPlaylists() {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization:
-          'Bearer BQAqsSToefOSFW5tX2-N5wYy8IouJslswnrVf91Qah53ZwfX17JCvsyden3ymc8LuF3M2xGg-9O1I5Kt_k_GZtB79QppkeKVJXpIe75uWYjg9aTK4AyUVGdJotQfSGP1nJbYe06ltg'
+          'Bearer BQB02M3DcFKuC-1t9W9lRXPkOEk0GPOi0Qr4dhJfm2G5juQS04eaGA6CQgJ513DCdb1hjHqT0aUMftVn5VfbIHdKHcbyzF7kzr6Ieh47y0MA3spYRAIPoTQnCKIYrjMQzt4rULrMxA'
       }
     })
       .then(response => response.json())

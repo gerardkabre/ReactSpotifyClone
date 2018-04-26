@@ -8,10 +8,11 @@
 
 .navBar > li > a {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 20px;
   padding-left: 20px;
   color: rgb(214, 212, 212);
   font-weight: 500;
+  font-size: 1em;
 }
 
 .navBar > li > a:hover {

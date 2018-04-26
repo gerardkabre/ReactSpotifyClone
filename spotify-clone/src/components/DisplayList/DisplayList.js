@@ -1,12 +1,14 @@
 import React from 'react';
-import './displayList';
+import './DisplayList.css';
 
 const DisplayList = ({ data }) => (
-  <ul>
+  <ul className="displayList">
     {data.map(item => (
       <li className="displayListItem" key={item.id}>
-        nombre: {item.name}, link: {item.href},
+        <img src={item.images[0].url} />
+        <b> {item.name}</b>
       </li>
+
     ))}
   </ul>
 );

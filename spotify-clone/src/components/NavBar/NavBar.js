@@ -1,41 +1,26 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import './NavBar.css';
 
 const NavBar = ({ location }) => (
   <Nav bsStyle="pills" stacked bsClass={'navBar'}>
-    <NavItem componentClass={Link} href="/" to="/" /* active={location.pathname === '/'} */>
-      Home 
+    <NavItem componentClass={Link} href="/" to="/">
+      Home
     </NavItem>
-    <NavItem
-      componentClass={Link}
-      bsClass={'navBar__item'}
-      href="/PlaylistsPage"
-      to="/PlaylistsPage" /* active={location.pathname === '/economies'} */
-    >
+    <NavItem componentClass={Link} href="/PlaylistsPage" to="/PlaylistsPage">
       Playlists
     </NavItem>
-    <NavItem
-      componentClass={Link}
-      bsClass={'navBar__item'}
-      href="/NewReleasesPage"
-      to="/NewReleasesPage" /* active={location.pathname === '/economies'} */
-    >
+    <NavItem componentClass={Link} href="/NewReleasesPage" to="/NewReleasesPage">
       New releases
     </NavItem>
 
-    <NavItem
-      componentClass={Link}
-      bsClass={'navBar__item'}
-      href="/AboutPage"
-      to="/AboutPage" /* active={location.pathname === '/economies'} */
-    >
+    <NavItem componentClass={Link} href="/AboutPage" to="/AboutPage">
       About us
     </NavItem>
   </Nav>
 );
 
-export default NavBar;
+export default withRouter(NavBar);
