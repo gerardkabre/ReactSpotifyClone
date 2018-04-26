@@ -9,6 +9,7 @@ import DisplayList from '../components/DisplayList/DisplayList';
 import { getPlaylists } from '../actions/playlists';
 
 class PlaylistsPage extends Component {
+  
   componentDidMount() {
     this.props.hasFetched ? null : this.props.dispatch(getPlaylists(this.props.token));
   }

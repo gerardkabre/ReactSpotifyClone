@@ -1,5 +1,5 @@
 .navBar {
-  background-color: rgb(22, 22, 22);
+  background-color: #181818;
   list-style: none;
   height: 100%;
   padding: 20px 20px 20px 20px;
@@ -8,7 +8,8 @@
 
 .navBar > li > a {
   display: inline-block;
-  margin-top: 20px;
+
+  margin-bottom: 6px;
   padding-left: 20px;
   color: rgb(214, 212, 212);
   font-weight: 500;
@@ -20,3 +21,9 @@
   text-decoration: none;
 }
 
+.NavBar__title {
+  margin-top: 10%;
+  display: inline-block;
+  padding-left: 20px;
+  color: rgba(187, 185, 185, 0.596);
+}

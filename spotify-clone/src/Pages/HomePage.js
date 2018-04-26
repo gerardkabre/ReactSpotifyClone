@@ -4,10 +4,13 @@ import { connect } from 'react-redux';
 
 import Container from '../components/Container/Container';
 import TitleSubtitle from '../components/Title&Subtitle/TitleSubtitle';
+import SongList from '../components/SongList/SongList';
 
 import { fetchTokenRequested } from '../actions/user';
 import { fetchTokenSuccess } from '../actions/user';
 import { getUser } from '../actions/user';
+import { fetchRecentlyPlayed } from '../actions/song';
+
 
 const authUrl =
   'https://accounts.spotify.com/authorize?client_id=7601320fe8e34a45b95e142c37e48b52&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=token&redirect_uri=http://localhost:3000/callback';
@@ -30,13 +33,16 @@ class HomePage extends Component {
   componentWillReceiveProps(nextProps) {
     if (!this.props.isLoggedIn) {
       if (nextProps.token) this.props.dispatch(getUser(nextProps.token));
+    } else {
+      if (!this.props.hasFetchedSongs) this.props.dispatch(fetchRecentlyPlayed(this.props.token));
     }
   }
 
   render() {
     return (
       <Container>
-        <TitleSubtitle title="Callback Ppage" subtitle="Discover new Jazz artists, bands and playlists" />
+        <TitleSubtitle title="Your Recently played songs" subtitle="Discover new Jazz artists, bands and playlists" />
+        <SongList data={this.props.songs.items} />
       </Container>
     );
   }
@@ -45,9 +51,9 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     isLoggedIn: state.user.isLoggedIn,
-    user: state.user.user,
-    tokenRequested: state.user.tokenRequested,
-    token: state.user.token
+    token: state.user.token,
+    songs: state.song.songs,
+    hasFetchedSongs: state.song.hasFetched
   };
 };
 

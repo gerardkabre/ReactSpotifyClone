@@ -1,0 +1,24 @@
+.songList {
+  width: 100%;
+  margin: 50px 0px 50px 0px;
+}
+
+.songList__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  border-top: rgba(255, 255, 255, 0.125) 1px solid;
+  font-size: 1em;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.songList__item:hover {
+  background-color: rgba(255, 255, 255, 0.085);
+  cursor: pointer;
+}
+
+.songList__item p {
+  flex: 3;
+}
