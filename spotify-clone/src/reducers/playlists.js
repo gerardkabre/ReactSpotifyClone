@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
     case PLAYLIST_FETCH_SUCCESS:
       return { ...state, isFetching: false, hasFetched: true, list: action.playlists };
     case PLAYLIST_FETCH_ERROR:
-      return { ...state, isFetching: false, error: action.err };
+      return { ...state, isFetching: false, error: action.playlists.list };
     default:
       return state;
   }

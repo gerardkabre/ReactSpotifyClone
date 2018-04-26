@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 import playlists from './playlists';
+import user from './user';
 
 export default combineReducers({
-  playlists: playlists
+  playlists: playlists,
+  user: user
 });

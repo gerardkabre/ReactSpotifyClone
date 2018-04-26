@@ -6,9 +6,8 @@ const DisplayList = ({ data }) => (
     {data.map(item => (
       <li className="displayListItem" key={item.id}>
         <img src={item.images[0].url} />
-        <b> {item.name}</b>
+        <p>{item.name}</p>
       </li>
-
     ))}
   </ul>
 );

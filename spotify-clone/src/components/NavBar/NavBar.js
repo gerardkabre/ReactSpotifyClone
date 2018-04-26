@@ -7,7 +7,7 @@ import './NavBar.css';
 
 const NavBar = ({ location }) => (
   <Nav bsStyle="pills" stacked bsClass={'navBar'}>
-    <NavItem componentClass={Link} href="/" to="/">
+    <NavItem componentClass={Link} href="/Callback" to="/Callback">
       Home
     </NavItem>
     <NavItem componentClass={Link} href="/PlaylistsPage" to="/PlaylistsPage">

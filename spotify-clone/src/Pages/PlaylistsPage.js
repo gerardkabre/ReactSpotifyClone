@@ -9,13 +9,19 @@ import DisplayList from '../components/DisplayList/DisplayList';
 import { getPlaylists } from '../actions/playlists';
 
 class PlaylistsPage extends Component {
-  
   componentDidMount() {
-    this.props.hasFetched ? null : this.props.dispatch(getPlaylists());
+    this.props.hasFetched ? null : this.props.dispatch(getPlaylists(this.props.token));
   }
 
   render() {
-    const { isFetching, list, hasFetched } = this.props;
+    const { isFetching, list, hasFetched, error } = this.props;
+
+    if (error != null)
+      return (
+        <Container>
+          <TitleSubtitle title="Error Fetching PLaylists" subtitle={error} />
+        </Container>
+      );
     if (hasFetched) {
       return (
         <Container>
@@ -38,7 +44,9 @@ const mapStateToProps = state => {
   return {
     isFetching: state.playlists.isFetching,
     list: state.playlists.list,
-    hasFetched: state.playlists.hasFetched
+    hasFetched: state.playlists.hasFetched,
+    error: state.playlists.error,
+    token: state.user.token
   };
 };
 

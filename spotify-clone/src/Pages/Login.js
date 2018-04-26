@@ -6,37 +6,22 @@ import Container from '../components/Container/Container';
 import TitleSubtitle from '../components/Title&Subtitle/TitleSubtitle';
 
 import { fetchTokenRequested } from '../actions/user';
-import { fetchTokenSuccess } from '../actions/user';
-import { getUser } from '../actions/user';
 
 const authUrl =
   'https://accounts.spotify.com/authorize?client_id=7601320fe8e34a45b95e142c37e48b52&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=token&redirect_uri=http://localhost:3000/callback';
 
-class HomePage extends Component {
-  extractHashFromUrl() {
-    let hashParams = {};
-    let e,
-      r = /([^&;=]+)=?([^&;]*)/g,
-      q = window.location.hash.substring(1);
-    while ((e = r.exec(q))) hashParams[e[1]] = decodeURIComponent(e[2]);
-
-    this.props.dispatch(fetchTokenSuccess(hashParams.access_token));
-  }
+class Login extends Component {
 
   componentDidMount() {
-    if (!this.props.isLoggedIn) this.extractHashFromUrl();
-  }
-
-  componentWillReceiveProps(nextProps) {
     if (!this.props.isLoggedIn) {
-      if (nextProps.token) this.props.dispatch(getUser(nextProps.token));
+      if (!this.props.token) return (window.location.href = authUrl);
     }
   }
 
   render() {
     return (
       <Container>
-        <TitleSubtitle title="Callback Ppage" subtitle="Discover new Jazz artists, bands and playlists" />
+        <TitleSubtitle title="The jazzy Page" subtitle="Discover new Jazz artists, bands and playlists" />
       </Container>
     );
   }
@@ -45,10 +30,8 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     isLoggedIn: state.user.isLoggedIn,
-    user: state.user.user,
-    tokenRequested: state.user.tokenRequested,
     token: state.user.token
   };
 };
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps)(Login);
