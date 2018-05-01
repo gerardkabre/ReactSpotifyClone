@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './NavBar.css';
 
@@ -10,6 +10,9 @@ const NavBar = ({ location }) => (
     <p className="NavBar__title">Your library </p>
     <NavItem componentClass={Link} href="/Callback" to="/Callback">
       Home
+    </NavItem>
+    <NavItem componentClass={Link} href="/AlbumsPage" to="/AlbumsPage">
+      AlbumsPage
     </NavItem>
     <NavItem componentClass={Link} href="/PlaylistsPage" to="/PlaylistsPage">
       Playlists
@@ -24,4 +27,4 @@ const NavBar = ({ location }) => (
   </Nav>
 );
 
-export default withRouter(NavBar);
+export default NavBar;

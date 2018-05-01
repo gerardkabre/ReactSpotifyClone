@@ -12,6 +12,7 @@ import Login from './Pages/Login';
 import PlaylistsPage from './Pages/PlaylistsPage.js';
 import NewReleasesPage from './Pages/NewReleasesPage.js';
 import HomePage from './Pages/HomePage.js';
+import AlbumsPage from './Pages/AlbumsPage.js';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ class App extends Component {
               <Header user={this.props.user} />
               <Route exact path="/" component={Login} />
               <Route path="/callback" component={HomePage} />
+              <Route path="/AlbumsPage" component={AlbumsPage} />
               <Route path="/AboutPage" component={AboutPage} />
               <Route path="/PlaylistsPage" component={PlaylistsPage} />
               <Route path="/NewReleasesPage" component={NewReleasesPage} />
