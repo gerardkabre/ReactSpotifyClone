@@ -1,3 +1,11 @@
+/*
+* audioControl function is all the logic related to playing songs in the browser. 
+* Looks in the state if an audio control button is pulsed and updates the audio object
+* of the app accordingly. Components get the methods related to interacting with the audio
+* controller thanks at the HOC AudioController, who gives them action dispatchers
+* to avoid having to pass down the same methods component after component.
+*/ 
+
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
