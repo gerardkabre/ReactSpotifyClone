@@ -17,28 +17,26 @@ import AlbumsPage from './Pages/AlbumsPage.js';
 import './App.css';
 
 class App extends Component {
-  
-  audioControl = song => {
-    const { playSong, stopSong } = this.props;
-
-    if (this.audio === undefined) {
-      playSong(song.track);
-      this.audio = new Audio(song.track.preview_url);
+  audioControl = () => {
+    if (this.props.playButton) {
+      if (this.audio) this.audio.pause();
+      this.audio = new Audio(this.props.songDetails.preview_url);
       this.audio.play();
-    } else {
-      stopSong();
+    }
+    if (this.props.pauseButton) {
       this.audio.pause();
-      playSong(song.track);
-      this.audio = new Audio(song.track.preview_url);
+    }
+    if (this.props.resumeButton) {
       this.audio.play();
     }
   };
 
   render() {
+    this.audioControl();
     return (
       <Router>
         <Grid fluid style={{ padding: 0 }}>
-          <Row className="show-grid" style={{ height: '90vh' }}>
+          <Row className="show-grid" style={{ height: '87vh' }}>
             <Col xs={2} md={2} style={{ height: '100%', padding: 0 }}>
               <NavBar />
             </Col>
@@ -54,8 +52,8 @@ class App extends Component {
           </Row>
 
           <Row className="show-grid">
-            <Col xs={12} md={12} style={{ height: '10vh' }}>
-              <Footer />
+            <Col xs={12} md={12} style={{ height: '13vh' }}>
+              <Footer isPlaying={this.props.isPlaying} songDetails={this.props.songDetails} />
             </Col>
           </Row>
         </Grid>
@@ -66,7 +64,12 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    isPlaying: state.song.isPlaying,
+    songDetails: state.song.songDetails,
+    playButton: state.song.playButton,
+    pauseButton: state.song.pauseButton,
+    resumeButton: state.song.resumeButton
   };
 };
 

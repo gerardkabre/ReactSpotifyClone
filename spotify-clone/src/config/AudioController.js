@@ -17,16 +17,12 @@ export default function AudioController(WrappedComponent) {
     class extends React.Component {
       play = song => {
         this.props.playSong(song.track);
-        this.audio = new Audio(song.track.preview_url);
-        this.audio.play();
       };
       pause = () => {
         this.props.pauseSong();
-        this.audio.pause();
       };
       resume = () => {
         this.props.resumeSong();
-        this.audio.play();
       };
 
       render() {

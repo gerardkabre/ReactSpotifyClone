@@ -1,7 +1,19 @@
 .footer {
-    background-color: #282828;
-    height: 100%;
-    width: 100%;
-    color: rgb(228, 228, 228);
+  background-color: #282828;
+  height: 100%;
+  width: 100%;
+  color: rgb(228, 228, 228);
+  display: flex;
+  justify-content: center;
+}
 
+.footer__Button {
+
+}
+.footer__Button-isPlaying {
+
+}
+
+.footer__Button-isNotPlaying {
+    
 }

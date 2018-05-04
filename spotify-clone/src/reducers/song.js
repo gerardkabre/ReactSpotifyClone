@@ -12,7 +12,10 @@ const initialState = {
   error: null,
   isPlaying: false,
   songDetails: null,
-  songId: null
+  songId: null,
+  playButton: false,
+  resumeButton: false,
+  pauseButton: false
 };
 
 export default (state = initialState, action) => {
@@ -41,17 +44,26 @@ export default (state = initialState, action) => {
         ...state,
         isPlaying: true,
         songDetails: action.song,
-        songId: action.song.id
+        songId: action.song.id,
+        playButton: true,
+        resumeButton: false,
+        pauseButton: false
       };
     case PAUSE_SONG:
       return {
         ...state,
-        isPlaying: false
+        isPlaying: false,
+        pauseButton: true,
+        playButton: false,
+        resumeButton: false
       };
     case RESUME_SONG:
       return {
         ...state,
-        isPlaying: true
+        resumeButton: true,
+        isPlaying: true,
+        pauseButton: false,
+        playButton: false
       };
     default:
       return state;

@@ -44,7 +44,7 @@ class HomePage extends Component {
     return (
       <Container>
         <TitleSubtitle title="Your Recently played songs" subtitle="Discover new Jazz artists, bands and playlists" />
-        <SongList data={this.props.songs.items} />
+        <SongList data={this.props.songs.items} onItemClick={this.props.play} />
       </Container>
     );
   }
