@@ -12,7 +12,7 @@ const NavBar = ({ location }) => (
       Home
     </NavItem>
     <NavItem componentClass={Link} href="/AlbumsPage" to="/AlbumsPage">
-      AlbumsPage
+      Albums
     </NavItem>
     <NavItem componentClass={Link} href="/PlaylistsPage" to="/PlaylistsPage">
       Playlists

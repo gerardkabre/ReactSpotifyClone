@@ -17,6 +17,23 @@ import AlbumsPage from './Pages/AlbumsPage.js';
 import './App.css';
 
 class App extends Component {
+  
+  audioControl = song => {
+    const { playSong, stopSong } = this.props;
+
+    if (this.audio === undefined) {
+      playSong(song.track);
+      this.audio = new Audio(song.track.preview_url);
+      this.audio.play();
+    } else {
+      stopSong();
+      this.audio.pause();
+      playSong(song.track);
+      this.audio = new Audio(song.track.preview_url);
+      this.audio.play();
+    }
+  };
+
   render() {
     return (
       <Router>

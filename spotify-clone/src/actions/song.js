@@ -1,6 +1,10 @@
 export const FETCH_RECENTLY_PLAYED_REQUEST = 'FETCH_RECENTLY_PLAYED_REQUEST';
 export const FETCH_RECENTLY_PLAYED_SUCCESS = 'FETCH_RECENTLY_PLAYED_SUCCESS';
 export const FETCH_RECENTLY_PLAYED_ERROR = 'FETCH_RECENTLY_PLAYED_ERROR';
+export const PLAY_SONG = 'PLAY_SONG';
+export const PAUSE_SONG = 'PAUSE_SONG';
+export const RESUME_SONG = 'RESUME_SONG';
+
 
 export function fetchRecentlyPlayedRequest() {
   return {
@@ -35,5 +39,24 @@ export const fetchRecentlyPlayed = accessToken => {
       .then(res => res.json())
       .then(res => dispatch(fetchRecentlyPlayedSuccess(res)))
       .catch(err => dispatch(fetchRecentlyPlayedError(err)));
+  };
+};
+
+export const playSong = song => {
+  return {
+    type: 'PLAY_SONG',
+    song
+  };
+};
+
+export const pauseSong = () => {
+  return {
+    type: 'PAUSE_SONG'
+  };
+};
+
+export const resumeSong = () => {
+  return {
+    type: 'RESUME_SONG'
   };
 };
