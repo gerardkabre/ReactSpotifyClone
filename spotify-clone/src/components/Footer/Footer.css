@@ -2,18 +2,20 @@
   background-color: #282828;
   height: 100%;
   width: 100%;
+  padding: 1%;
   color: rgb(228, 228, 228);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
-
+.footer__SongDetails {
+  flex: 1;
+}
 .footer__Button {
-
+  flex: 1;
+  text-align: center;
 }
-.footer__Button-isPlaying {
-
-}
-
-.footer__Button-isNotPlaying {
-    
+.footer__something {
+  flex: 1;
+  text-align: right;
+  padding: 1%;
 }

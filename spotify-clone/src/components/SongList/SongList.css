@@ -22,3 +22,8 @@
 .songList__item p {
   flex: 3;
 }
+
+.songList__item__title {
+  border-top: white 0px solid;
+  font-weight: lighter;
+}

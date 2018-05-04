@@ -1,28 +1,36 @@
 import React from 'react';
 import AudioController from '../../config/AudioController';
+
+import FaPlay from 'react-icons/lib/fa/play';
+import FaPause from 'react-icons/lib/fa/pause';
+
 import './Footer.css';
 
 const noSongSelected = resume => (
   <div className="footer">
-    <div clasName="footer__SongDetails">
+    <div className="footer__SongDetails">
       <p>Select a song first</p>
       <p>Select an artist first</p>
     </div>
     <div className="footer__Button footer__Button-isPaused" onClick={() => alert('Select a song first')}>
-      'Play'
+      <FaPlay size={50}  />
     </div>
+
+    <div className="footer__something">third div</div>
   </div>
 );
 
 const songPaused = (resume, songDetails) => (
   <div className="footer">
-    <div clasName="footer__SongDetails">
+    <div className="footer__SongDetails">
       <p>{songDetails.name}</p>
       <p>{songDetails.artists[0].name}</p>
     </div>
     <div className="footer__Button footer__Button-isPaused" onClick={() => resume()}>
-      'Play'
+      <FaPlay size={50} />
     </div>
+
+    <div className="footer__something">third div</div>
   </div>
 );
 
@@ -31,14 +39,16 @@ const Footer = ({ isPlaying, songDetails, pause, resume }) => {
   if (!isPlaying) return songPaused(resume, songDetails);
   return (
     <div className="footer">
-      <div clasName="footer__SongDetails">
+      <div className="footer__SongDetails">
         <p>{songDetails.name}</p>
         <p>{songDetails.artists[0].name}</p>
       </div>
 
       <div className="footer__Button footer__Button-isPlaying" onClick={() => pause()}>
-        'Pause'
+        <FaPause size={50}  />
       </div>
+
+      <div className="footer__something">third div</div>
     </div>
   );
 };
