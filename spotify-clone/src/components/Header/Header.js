@@ -7,7 +7,7 @@ const Header = ({ user }) => {
     return (
       <div className="header">
         <div className="header__BackButton">
-          <h1>go back</h1>
+          <h1><a style={{color: '#1DB954'}} href="https://github.com/gerardkabre/ReactSpotifyClone">Github link</a></h1>
         </div>
         <div className="header__Profile">
           <img src={user.images[0].url} />

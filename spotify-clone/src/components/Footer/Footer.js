@@ -16,7 +16,7 @@ const noSongSelected = resume => (
       <FaPlay size={50}  />
     </div>
 
-    <div className="footer__something">third div</div>
+    <div className="footer__name"> Made by gerard cabrerizo</div>
   </div>
 );
 
@@ -30,7 +30,7 @@ const songPaused = (resume, songDetails) => (
       <FaPlay size={50} />
     </div>
 
-    <div className="footer__something">third div</div>
+    <div className="footer__name">  Made by gerard cabrerizo</div>
   </div>
 );
 
@@ -48,7 +48,7 @@ const Footer = ({ isPlaying, songDetails, pause, resume }) => {
         <FaPause size={50}  />
       </div>
 
-      <div className="footer__something">third div</div>
+      <div className="footer__name">  Made by gerard cabrerizo</div>
     </div>
   );
 };

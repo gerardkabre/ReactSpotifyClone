@@ -17,8 +17,10 @@
 .footer__Button:hover {
   cursor: pointer;
 }
-.footer__something {
+.footer__name {
   flex: 1;
   text-align: right;
-  padding: 1%;
+  margin-top: 1.5%;
+  font-weight: lighter;
+  color: rgba(34, 219, 99, 0.76);
 }

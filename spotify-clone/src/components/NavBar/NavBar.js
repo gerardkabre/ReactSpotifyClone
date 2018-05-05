@@ -26,9 +26,9 @@ const NavBar = ({ location, songDetails }) => (
       <NavItem componentClass={Link} href="/SongsPage" to="/SongsPage">
         Songs
       </NavItem>
-      <p className="NavBar__title">Playlists </p>
+      <p className="NavBar__title">About </p>
       <NavItem componentClass={Link} href="/AboutPage" to="/AboutPage">
-        About us
+        About this app
       </NavItem>
     </div>
     {albumImage(songDetails)}

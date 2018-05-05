@@ -7,7 +7,7 @@
 */
 
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -39,6 +39,10 @@ class App extends Component {
     }
   };
 
+  PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={props => (this.props.user ? <Component {...props} /> : <Redirect to="/" />)} />
+  );
+
   render() {
     this.audioControl();
     return (
@@ -52,10 +56,9 @@ class App extends Component {
               <Header user={this.props.user} />
               <Route exact path="/" component={Login} />
               <Route path="/callback" component={HomePage} />
-              <Route path="/AlbumsPage" component={AlbumsPage} />
-              <Route path="/AboutPage" component={AboutPage} />
-              
-              <Route path="/SongsPage" component={SongsPage} />
+              <this.PrivateRoute path="/AlbumsPage" component={AlbumsPage} />
+              <this.PrivateRoute path="/AboutPage" component={AboutPage} />
+              <this.PrivateRoute path="/SongsPage" component={SongsPage} />
             </Col>
           </Row>
 
