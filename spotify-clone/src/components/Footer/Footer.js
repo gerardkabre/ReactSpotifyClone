@@ -9,8 +9,8 @@ import './Footer.css';
 const noSongSelected = resume => (
   <div className="footer">
     <div className="footer__SongDetails">
-      <p>Select a song first</p>
-      <p>Select an artist first</p>
+      <p style={{color: '#77797c'}}> Select a song </p>
+      <p style={{color: '#77797c'}}>no artist selected</p>
     </div>
     <div className="footer__Button footer__Button-isPaused" onClick={() => alert('Select a song first')}>
       <FaPlay size={50}  />

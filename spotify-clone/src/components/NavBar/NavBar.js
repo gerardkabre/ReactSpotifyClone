@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 
 import './NavBar.css';
 
-const NavBar = ({ location }) => (
+const NavBar = ({ location, songDetails }) => (
   <Nav bsStyle="pills" stacked bsClass={'navBar'}>
+    <div>
     <p className="NavBar__title">Your library </p>
     <NavItem componentClass={Link} href="/Callback" to="/Callback">
       Home
@@ -24,6 +25,10 @@ const NavBar = ({ location }) => (
     <NavItem componentClass={Link} href="/AboutPage" to="/AboutPage">
       About us
     </NavItem>
+    </div>
+
+    {songDetails ? <img src={songDetails.album.images[1].url} className="navBar__image" /> : null}
+
   </Nav>
 );
 

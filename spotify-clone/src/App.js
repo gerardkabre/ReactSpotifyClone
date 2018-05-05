@@ -4,7 +4,7 @@
 * of the app accordingly. Components get the methods related to interacting with the audio
 * controller thanks at the HOC AudioController, who gives them action dispatchers
 * to avoid having to pass down the same methods component after component.
-*/ 
+*/
 
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -46,7 +46,7 @@ class App extends Component {
         <Grid fluid style={{ padding: 0 }}>
           <Row className="show-grid" style={{ height: '87vh' }}>
             <Col xs={2} md={2} style={{ height: '100%', padding: 0 }}>
-              <NavBar />
+              <NavBar songDetails={this.props.songDetails} />
             </Col>
             <Col xs={10} md={10} className="content">
               <Header user={this.props.user} />

@@ -14,6 +14,9 @@
   flex: 1;
   text-align: center;
 }
+.footer__Button:hover {
+  cursor: pointer;
+}
 .footer__something {
   flex: 1;
   text-align: right;
