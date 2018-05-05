@@ -1,14 +1,19 @@
 import { FETCH_RECENTLY_PLAYED_REQUEST, RESUME_SONG } from '../actions/song';
 import { FETCH_RECENTLY_PLAYED_SUCCESS } from '../actions/song';
 import { FETCH_RECENTLY_PLAYED_ERROR } from '../actions/song';
+import { FETCH_ALL_SONGS_REQUEST } from '../actions/song';
+import { FETCH_ALL_SONGS_SUCCESS } from '../actions/song';
+import { FETCH_ALL_SONGS_ERROR } from '../actions/song';
 import { PLAY_SONG } from '../actions/song';
 import { PAUSE_SONG } from '../actions/song';
 import { STOP_SONG } from '../actions/song';
 
 const initialState = {
   isFetching: false,
-  hasFetched: false,
+  hasFetchedRecentSongs: false,
+  hasFetchedAllSongs: false,
   songs: [],
+  allSongs: [],
   error: null,
   isPlaying: false,
   songDetails: null,
@@ -29,7 +34,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        hasFetched: true,
+        hasFetchedRecentSongs: true,
         songs: action.songs
       };
     case FETCH_RECENTLY_PLAYED_ERROR:
@@ -39,6 +44,20 @@ export default (state = initialState, action) => {
         hasFetched: false,
         error: action.err
       };
+    case FETCH_ALL_SONGS_REQUEST:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case FETCH_ALL_SONGS_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        hasFetchedAllSongs: true,
+        hasFetchedRecentSongs: false,
+        songs: action.songs
+      };
+    case FETCH_ALL_SONGS_ERROR:
     case PLAY_SONG:
       return {
         ...state,

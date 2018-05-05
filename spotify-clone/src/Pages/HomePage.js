@@ -29,7 +29,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     if (!this.props.isLoggedIn) this.extractHashFromUrl();
-    
   }
 
   componentWillReceiveProps(nextProps) {
@@ -55,10 +54,9 @@ const mapStateToProps = state => {
     isLoggedIn: state.user.isLoggedIn,
     token: state.user.token,
     songs: state.song.songs,
-    hasFetchedSongs: state.song.hasFetched
+    hasFetchedSongs: state.song.hasFetchedRecentSongs
   };
 };
 
 const HomePageConnected = connect(mapStateToProps)(HomePage);
 export default AudioController(HomePageConnected);
-

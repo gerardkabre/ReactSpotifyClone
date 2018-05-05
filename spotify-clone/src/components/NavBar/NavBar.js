@@ -18,16 +18,13 @@ const NavBar = ({ location, songDetails }) => (
     <div>
       <p className="NavBar__title">Your library </p>
       <NavItem componentClass={Link} href="/Callback" to="/Callback">
-        Home
+        Recently played
       </NavItem>
       <NavItem componentClass={Link} href="/AlbumsPage" to="/AlbumsPage">
         Albums
       </NavItem>
-      <NavItem componentClass={Link} href="/PlaylistsPage" to="/PlaylistsPage">
-        Playlists
-      </NavItem>
-      <NavItem componentClass={Link} href="/NewReleasesPage" to="/NewReleasesPage">
-        New releases
+      <NavItem componentClass={Link} href="/SongsPage" to="/SongsPage">
+        Songs
       </NavItem>
       <p className="NavBar__title">Playlists </p>
       <NavItem componentClass={Link} href="/AboutPage" to="/AboutPage">
