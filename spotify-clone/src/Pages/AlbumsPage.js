@@ -17,7 +17,7 @@ class AlbumsPage extends Component {
     return (
       <Container>
         <TitleSubtitle title="Your Albums" subtitle="all the albums you have saved" />
-        <DisplayList data={this.props.albums} album />
+        <DisplayList data={this.props.albums} />
       </Container>
     );
   }

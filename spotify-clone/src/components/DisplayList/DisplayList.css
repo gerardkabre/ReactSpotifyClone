@@ -14,7 +14,8 @@
     text-align: center;
 }
 .displayListItem:hover {
-    box-shadow:  0 16px 23px rgba(80, 78, 78, 0.25), 0 20px 10px rgba(94, 91, 91, 0.22);
+    background-color: rgba(255, 255, 255, 0.085);
+    cursor: pointer;
 }
 
 .displayListItem img {

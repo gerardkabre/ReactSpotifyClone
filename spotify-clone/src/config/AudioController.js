@@ -16,7 +16,7 @@ export default function AudioController(WrappedComponent) {
   return connect(null, mapDispatchToProps)(
     class extends React.Component {
       play = song => {
-        this.props.playSong(song.track);
+        this.props.playSong(song);
       };
       pause = () => {
         this.props.pauseSong();
