@@ -24,17 +24,10 @@ class Login extends Component {
 
   componentDidMount() {
     if (!this.props.isLoggedIn) {
-
       if (!this.props.token && !this.props.tokenRequested) {
-        alert('motherfucker no token and not requested');
-
+        alert('motherfucker no token and not requested, lets go to the url to get it');
         this.props.dispatch(fetchTokenRequested());
         window.location.href = authUrl;
-      }
-      if (!this.props.token && this.props.tokenRequested) {
-        alert('motherfucker no token but has requested it');
-
-        this.extractHashFromUrl();
       }
     }
   }
@@ -42,11 +35,12 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     alert('motherfucker will receive props');
 
-    if (!this.props.isLoggedIn) {
-      alert('motherfucker not logged in and will try to get user')
-      if (nextProps.token) this.props.dispatch(getUser(nextProps.token));
-    } else {
-      alert('motherfucker has logged in');
+    if (!this.props.isLoggedIn && this.props.tokenRequested) {
+      alert('motherfucker no token but has requested it, lets extarct it');
+      this.extractHashFromUrl();
+    }
+    if (this.props.tokenSuccess) {
+      this.props.dispatch(getUser(nextProps.token));
     }
   }
 
@@ -63,7 +57,8 @@ const mapStateToProps = state => {
   return {
     isLoggedIn: state.user.isLoggedIn,
     token: state.user.token,
-    tokenRequested: state.user.tokenRequested
+    tokenRequested: state.user.tokenRequested,
+    tokenSuccess: state.user.tokenSuccess
   };
 };
 
