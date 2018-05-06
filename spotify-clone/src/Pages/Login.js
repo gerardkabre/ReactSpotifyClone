@@ -24,19 +24,26 @@ class Login extends Component {
 
   componentDidMount() {
     if (!this.props.isLoggedIn) {
-      
+
       if (!this.props.token && !this.props.tokenRequested) {
+        alert('motherfucker no token and not requested');
+
         this.props.dispatch(fetchTokenRequested());
         window.location.href = authUrl;
       }
       if (!this.props.token && this.props.tokenRequested) {
+        alert('motherfucker no token but has requested it');
+
         this.extractHashFromUrl();
       }
     }
   }
 
   componentWillReceiveProps(nextProps) {
+    alert('motherfucker will receive props');
+
     if (!this.props.isLoggedIn) {
+      alert('motherfucker not logged in and will try to get user')
       if (nextProps.token) this.props.dispatch(getUser(nextProps.token));
     } else {
       alert('motherfucker has logged in');
