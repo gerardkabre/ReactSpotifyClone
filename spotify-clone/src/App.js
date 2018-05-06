@@ -54,11 +54,11 @@ class App extends Component {
             </Col>
             <Col xs={10} md={10} className="content">
               <Header user={this.props.user} />
-              <Route exact path="/" component={Login} />
-              <Route path="/callback" component={HomePage} />
-              <this.PrivateRoute path="/AlbumsPage" component={AlbumsPage} />
-              <this.PrivateRoute path="/AboutPage" component={AboutPage} />
-              <this.PrivateRoute path="/SongsPage" component={SongsPage} />
+              <Route exact path="/ReactSpotifyClone/" component={Login} />
+              <Route path="/ReactSpotifyClone/callback" component={HomePage} />
+              <this.PrivateRoute path="/ReactSpotifyClone/AlbumsPage" component={AlbumsPage} />
+              <this.PrivateRoute path="/ReactSpotifyClone/AboutPage" component={AboutPage} />
+              <this.PrivateRoute path="/ReactSpotifyClone/SongsPage" component={SongsPage} />
             </Col>
           </Row>
 
