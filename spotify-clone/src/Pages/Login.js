@@ -18,7 +18,10 @@ class Login extends Component {
   }
 
   render() {
-    return null;
+    return  <Container>
+    <TitleSubtitle title="You must Login with your account first" subtitle="" />
+    <SongList data={this.props.songs.items} onItemClick={this.props.play} />
+  </Container>;
   }
 }
 
