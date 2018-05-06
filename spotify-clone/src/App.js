@@ -7,7 +7,7 @@
 */
 
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -46,7 +46,7 @@ class App extends Component {
   render() {
     this.audioControl();
     return (
-      <Router>
+      <Router basename="/bitch">
         <Grid fluid style={{ padding: 0 }}>
           <Row className="show-grid" style={{ height: '87vh' }}>
             <Col xs={2} md={2} style={{ height: '100%', padding: 0 }}>
