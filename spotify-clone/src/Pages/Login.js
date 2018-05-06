@@ -28,6 +28,7 @@ class Login extends Component {
         alert('motherfucker no token and not requested, lets go to the url to get it');
         this.props.dispatch(fetchTokenRequested());
         window.location.href = authUrl;
+        console.log(this.props.tokenRequested);
       }
       if (this.props.tokenRequested) {
         alert('motherfucker no token but has requested it, lets extarct it');
