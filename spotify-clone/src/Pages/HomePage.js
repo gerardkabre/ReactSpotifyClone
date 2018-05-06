@@ -13,29 +13,9 @@ import { fetchTokenSuccess } from '../actions/user';
 import { getUser } from '../actions/user';
 import { fetchRecentlyPlayed } from '../actions/song';
 
-
-
 class HomePage extends Component {
-  extractHashFromUrl() {
-    let hashParams = {};
-    let e,
-      r = /([^&;=]+)=?([^&;]*)/g,
-      q = window.location.hash.substring(1);
-    while ((e = r.exec(q))) hashParams[e[1]] = decodeURIComponent(e[2]);
-
-    this.props.dispatch(fetchTokenSuccess(hashParams.access_token));
-  }
-
   componentDidMount() {
-    if (!this.props.isLoggedIn) this.extractHashFromUrl();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (!this.props.isLoggedIn) {
-      if (nextProps.token) this.props.dispatch(getUser(nextProps.token));
-    } else {
-      if (!this.props.hasFetchedSongs) this.props.dispatch(fetchRecentlyPlayed(this.props.token));
-    }
+    if (!this.props.hasFetchedSongs) this.props.dispatch(fetchRecentlyPlayed(this.props.token));
   }
 
   render() {
