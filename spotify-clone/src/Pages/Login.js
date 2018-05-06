@@ -34,14 +34,11 @@ class Login extends Component {
         this.extractHashFromUrl();
       }
       if (this.props.tokenSuccess) {
-        this.props.dispatch(getUser(nextProps.token));
+        this.props.dispatch(getUser(this.props.token));
       }
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    alert('motherfucker will receive props');
-  }
 
   render() {
     return (
