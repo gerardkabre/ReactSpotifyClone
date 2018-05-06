@@ -46,7 +46,7 @@ class App extends Component {
   render() {
     this.audioControl();
     return (
-      <Router basename="/bitch">
+      <Router basename="/app">
         <Grid fluid style={{ padding: 0 }}>
           <Row className="show-grid" style={{ height: '87vh' }}>
             <Col xs={2} md={2} style={{ height: '100%', padding: 0 }}>
@@ -54,11 +54,11 @@ class App extends Component {
             </Col>
             <Col xs={10} md={10} className="content">
               <Header user={this.props.user} />
-              <Route exact path="/ReactSpotifyClone/" component={Login} />
-              <Route path="/ReactSpotifyClone/Callback" component={HomePage} />
-              <this.PrivateRoute path="/ReactSpotifyClone/AlbumsPage" component={AlbumsPage} />
-              <this.PrivateRoute path="/ReactSpotifyClone/AboutPage" component={AboutPage} />
-              <this.PrivateRoute path="/ReactSpotifyClone/SongsPage" component={SongsPage} />
+              <Route exact path="/" component={Login} />
+              <Route path="/Callback" component={HomePage} />
+              <this.PrivateRoute path="/AlbumsPage" component={AlbumsPage} />
+              <this.PrivateRoute path="/AboutPage" component={AboutPage} />
+              <this.PrivateRoute path="/SongsPage" component={SongsPage} />
             </Col>
           </Row>
 
