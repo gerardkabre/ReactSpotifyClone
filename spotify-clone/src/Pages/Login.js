@@ -28,7 +28,7 @@ class Login extends Component {
 
   componentDidMount() {
     if (!this.props.isLoggedIn) {
-      if (extractHashFromUrl()) {
+      if (this.extractHashFromUrl()) {
         this.props.dispatch(getUser(this.props.token));
       } else {
         window.location.href = authUrl;
