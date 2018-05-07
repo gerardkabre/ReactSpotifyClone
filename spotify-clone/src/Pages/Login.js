@@ -21,6 +21,7 @@ class Login extends Component {
     while ((e = r.exec(q))) hashParams[e[1]] = decodeURIComponent(e[2]);
 
     if (hashParams.access_token) {
+      alert(hashParams.access_token)
       this.props.dispatch(fetchTokenSuccess(hashParams.access_token));
       return true;
     } else return false;
@@ -29,6 +30,7 @@ class Login extends Component {
   componentDidMount() {
     if (!this.props.isLoggedIn) {
       if (this.extractHashFromUrl()) {
+        alert(this.props.token)
         this.props.dispatch(getUser(this.props.token));
       } else {
         window.location.href = authUrl;
