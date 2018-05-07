@@ -19,31 +19,22 @@ class Login extends Component {
       r = /([^&;=]+)=?([^&;]*)/g,
       q = window.location.hash.substring(1);
     while ((e = r.exec(q))) hashParams[e[1]] = decodeURIComponent(e[2]);
-    this.props.dispatch(fetchTokenSuccess(hashParams.access_token));
+
+    if (hashParams.access_token) {
+      this.props.dispatch(fetchTokenSuccess(hashParams.access_token));
+      return true;
+    } else return false;
   }
 
   componentDidMount() {
     if (!this.props.isLoggedIn) {
-
-      if (!this.props.tokenRequested) {
-        console.log('motherfucker no token and not requested, lets go to the url to get it');
-        this.props.dispatch(fetchTokenRequested());
-        window.location.href = authUrl;
-        console.log(this.props.tokenRequested);
-      }
-      
-      if (this.props.tokenRequested) {
-        console.log('motherfucker no token but has requested it, lets extarct it');
-        this.extractHashFromUrl();
-      }
-      if (this.props.tokenSuccess) {
+      if (extractHashFromUrl()) {
         this.props.dispatch(getUser(this.props.token));
-
+      } else {
+        window.location.href = authUrl;
       }
-
     }
   }
-
 
   render() {
     return (
