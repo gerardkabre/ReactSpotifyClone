@@ -14,7 +14,7 @@ const Header = ({ user }) => {
         </div>
         <div className="header__Profile">
           {user.images[0] ? <img src={user.images[0].url} /> : null}
-          <h2>{user.display_name}</h2>
+          <h2>{user.id}</h2>
         </div>
       </div>
     );
