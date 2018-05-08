@@ -3,7 +3,7 @@ import './Header.css';
 
 const Header = ({ user }) => {
 
-  if (user !== undefined)
+  if (user !== undefined && user.images)
     return (
       <div className="header">
         <div className="header__BackButton">
@@ -18,7 +18,7 @@ const Header = ({ user }) => {
     else { return (
         <div className="header">
         <div className="header__BackButton">
-          <img src="./goback.jpg" />
+          
         </div>
         <div className="header__Profile">
           <img  />
