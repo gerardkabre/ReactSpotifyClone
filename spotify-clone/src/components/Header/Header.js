@@ -13,7 +13,7 @@ const Header = ({ user }) => {
           </h1>
         </div>
         <div className="header__Profile">
-          {user.images ? <img src={user.images[0].url} /> : null}
+          {user.images[0] ? <img src={user.images[0].url} /> : null}
           <h2>{user.display_name}</h2>
         </div>
       </div>
