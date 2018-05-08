@@ -33,7 +33,7 @@ class Login extends Component {
       if (!this.extractHashFromUrl()) {
         window.location.href = authUrl;
       }
-    } else return this.props.history.push('/ReactSpotifyClone/Callback');
+    } 
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,7 +41,7 @@ class Login extends Component {
       if (nextProps.token) {
         this.props.dispatch(getUser(nextProps.token));
       }
-    }
+    } else return this.props.history.push('/ReactSpotifyClone/Callback');
   }
   render() {
     return (
