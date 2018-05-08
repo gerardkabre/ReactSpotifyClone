@@ -15,7 +15,7 @@ import { fetchRecentlyPlayed } from '../actions/song';
 
 class HomePage extends Component {
   componentDidMount() {
-    if (!this.props.hasFetchedSongs) this.props.dispatch(fetchRecentlyPlayed(this.props.token));
+    this.props.dispatch(fetchRecentlyPlayed(this.props.token));
   }
 
   render() {
