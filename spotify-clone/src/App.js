@@ -22,6 +22,8 @@ import SongsPage from './Pages/SongsPage.js';
 import HomePage from './Pages/HomePage.js';
 import AlbumsPage from './Pages/AlbumsPage.js';
 
+import PrivateRoute from './config/utils.js';
+
 import './App.css';
 
 class App extends Component {
@@ -39,9 +41,7 @@ class App extends Component {
     }
   };
 
-  PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route {...rest} render={props => (this.props.user ? <Component {...props} /> : <Redirect to="/" />)} />
-  );
+  
 
   render() {
     this.audioControl();
@@ -55,10 +55,10 @@ class App extends Component {
             <Col xs={10} md={10} className="content">
               <Header user={this.props.user} />
               <Route exact path="/ReactSpotifyClone/" component={Login} />
-              <Route path="/ReactSpotifyClone/Callback" component={HomePage} />
-              <this.PrivateRoute path="/ReactSpotifyClone/AlbumsPage" component={AlbumsPage} />
-              <this.PrivateRoute path="/ReactSpotifyClone/AboutPage" component={AboutPage} />
-              <this.PrivateRoute path="/ReactSpotifyClone/SongsPage" component={SongsPage} />
+              <PrivateRoute path="/ReactSpotifyClone/RecentSongs" component={HomePage} />
+              <PrivateRoute path="/ReactSpotifyClone/AlbumsPage" component={AlbumsPage} />
+              <PrivateRoute path="/ReactSpotifyClone/AboutPage" component={AboutPage} />
+              <PrivateRoute path="/ReactSpotifyClone/SongsPage" component={SongsPage} />
             </Col>
           </Row>
 

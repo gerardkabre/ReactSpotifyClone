@@ -17,7 +17,7 @@ const NavBar = ({ location, songDetails }) => (
   <Nav bsStyle="pills" stacked bsClass={'navBar'}>
     <div>
       <p className="NavBar__title">Your library </p>
-      <NavItem componentClass={Link} href="/ReactSpotifyClone/Callback" to="/ReactSpotifyClone/Callback">
+      <NavItem componentClass={Link} href="/ReactSpotifyClone/RecentSongs" to="/ReactSpotifyClone/RecentSongs">
         Recently played
       </NavItem>
       <NavItem componentClass={Link} href="/ReactSpotifyClone/AlbumsPage" to="/ReactSpotifyClone/AlbumsPage">

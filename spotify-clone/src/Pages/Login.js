@@ -44,10 +44,10 @@ class Login extends Component {
     }
   }
   render() {
-    if (this.props.isLoggedIn) return <Redirect to="/ReactSpotifyClone/Callback" />;
+    if (this.props.isLoggedIn) return <Redirect to="/ReactSpotifyClone/RecentSongs" />;
     return (
       <Container>
-        <TitleSubtitle title="You must Login with your account first" subtitle="" />
+        <TitleSubtitle title="You are not logged-in" subtitle="You must Log-in with your spotify account to use this app." />
       </Container>
     );
   }
