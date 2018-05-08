@@ -33,7 +33,7 @@ class Login extends Component {
       if (!this.extractHashFromUrl()) {
         window.location.href = authUrl;
       }
-    } 
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,9 +41,10 @@ class Login extends Component {
       if (nextProps.token) {
         this.props.dispatch(getUser(nextProps.token));
       }
-    } else return this.props.history.push('/ReactSpotifyClone/Callback');
+    }
   }
   render() {
+    if (this.props.isLoggedIn) return <Redirect to="/ReactSpotifyClone/Callback" />;
     return (
       <Container>
         <TitleSubtitle title="You must Login with your account first" subtitle="" />
@@ -63,5 +64,3 @@ const mapStateToProps = state => {
 
 const LoginConnected = connect(mapStateToProps)(Login);
 export default withRouter(LoginConnected);
-
-
