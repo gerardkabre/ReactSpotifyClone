@@ -3,7 +3,7 @@ import './Header.css';
 
 const Header = ({ user }) => {
 
-  if (user != null)
+  if (user !== undefined)
     return (
       <div className="header">
         <div className="header__BackButton">
