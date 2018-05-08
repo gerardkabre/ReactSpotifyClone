@@ -12,10 +12,16 @@ const Header = ({ user }) => {
             </a>
           </h1>
         </div>
-        <div className="header__Profile">
-          {user.images[0] ? <img src={user.images[0].url} /> : null}
-          <h2>{user.id}</h2>
-        </div>
+        {user.images[0] ? (
+          <div className="header__Profile">
+            <img src={user.images[0].url} />
+            <h2>{user.display_name}</h2>
+          </div>
+        ) : (
+          <div className="header__Profile">
+            <h2>{user.id}</h2>
+          </div>
+        )}
       </div>
     );
   else {
