@@ -41,8 +41,6 @@ class App extends Component {
     }
   };
 
-  
-
   render() {
     this.audioControl();
     return (
@@ -55,10 +53,10 @@ class App extends Component {
             <Col xs={10} md={10} className="content">
               <Header user={this.props.user} />
               <Route exact path="/ReactSpotifyClone/" component={Login} />
-              <PrivateRoute path="/ReactSpotifyClone/RecentSongs" component={HomePage} />
-              <PrivateRoute path="/ReactSpotifyClone/AlbumsPage" component={AlbumsPage} />
-              <PrivateRoute path="/ReactSpotifyClone/AboutPage" component={AboutPage} />
-              <PrivateRoute path="/ReactSpotifyClone/SongsPage" component={SongsPage} />
+              <PrivateRoute path="/ReactSpotifyClone/RecentSongs" component={HomePage} user={this.props.user} />
+              <PrivateRoute path="/ReactSpotifyClone/AlbumsPage" component={AlbumsPage} user={this.props.user} />
+              <PrivateRoute path="/ReactSpotifyClone/AboutPage" component={AboutPage} user={this.props.user} />
+              <PrivateRoute path="/ReactSpotifyClone/SongsPage" component={SongsPage} user={this.props.user} />
             </Col>
           </Row>
 
